@@ -1,0 +1,60 @@
+
+HR Management System – Project Explanation Script
+
+1. Introduction
+
+"Hello everyone. Today I’m presenting my HR Management System project built on AWS using a fully serverless architecture with frontend integration. This system helps HR managers and employees perform essential HR tasks such as managing employees, submitting leave requests, processing payroll, and more."
+
+2. Architecture Overview
+
+"The backend of the system is powered by AWS Lambda functions connected via Amazon API Gateway. Each Lambda function handles a specific HR operation. DynamoDB is used as the database to store employee details, leave records, attendance, performance reviews, payroll, and uploaded documents. Files are stored in S3 for easy document handling."
+
+3. Frontend
+
+"The frontend is a clean HTML, CSS, and JavaScript-based interface. Users can access various sections such as adding employees, submitting leave, processing payroll, submitting performance reviews, and uploading documents."
+
+4. User Authentication with Cognito
+
+"To ensure security and role-based access, I integrated Amazon Cognito for user login. There are two roles: HR Manager and Employee. The login page uses Cognito User Pools to authenticate users and provide JWT tokens, which can later be used for authorized access control."
+
+5. Implementation Steps
+
+"Here’s a quick summary of how I built the project step by step:"
+
+1. Created DynamoDB tables:
+   - EmployeeTable
+   - LeaveTable
+   - PayrollTable
+   - AttendanceTable
+   - PerformanceTable
+   - DocumentTable
+
+2. Developed 6 Lambda Functions:
+   - addEmployee
+   - addLeaveRequest
+   - processPayroll
+   - submitPerformance
+   - markAttendance
+   - uploadDocument
+
+3. Set up API Gateway:
+   - Connected each Lambda function to a corresponding REST API endpoint.
+   - Enabled CORS for frontend access.
+
+4. Built the Frontend:
+   - HTML forms for each function
+   - CSS for UI styling
+   - JavaScript for handling form submission and calling API Gateway endpoints
+
+5. Integrated Cognito Authentication:
+   - Created a Cognito User Pool with two groups: HRManager and Employee
+   - Created a login.html page with JavaScript authentication using the Cognito Identity SDK
+   - Validated user login and redirected based on their role
+
+6. Demonstration
+
+"Let me show you a quick demo. I’ll first log in using an HR manager account. After logging in, I can add an employee, submit leave, and process payroll. The frontend interacts directly with API Gateway, which triggers the respective Lambda function and stores the data in DynamoDB."
+
+7. Summary
+
+"In summary, this HRMS project demonstrates how to build a secure, scalable, serverless system using AWS Lambda, API Gateway, DynamoDB, Cognito, and S3. It also shows full-stack integration using HTML, CSS, and JavaScript with AWS backend services. This system can be extended further with analytics, admin dashboards, or mobile support."
